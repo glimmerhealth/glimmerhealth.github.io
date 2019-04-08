@@ -82,7 +82,8 @@ function reqFirstRoute2Render(inRouteString)
 // Router
 function zlRouter() 
 { 
-	const newRoute = window.location.hash;
+    const newRoute = window.location.hash;
+    closeNav();
     reqWorkerRenderRoute(newRoute);
 }
 window.onhashchange = zlRouter;

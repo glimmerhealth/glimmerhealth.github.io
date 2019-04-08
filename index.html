@@ -195,13 +195,23 @@
   const navBurger = document.querySelector('.navbar-burger');
   let darkMode = true;
 
-  navBurger.addEventListener('click', () => {
+  function toggleNav() 
+  {
     const navEle = navBurger.dataset.target;
     navTarget = document.getElementById(navEle);
     navBurger.classList.toggle('is-active');
     navTarget.classList.toggle('is-active');
+  }
 
-  });
+  function closeNav()
+  {
+    const navEle = navBurger.dataset.target;
+    navTarget = document.getElementById(navEle);
+    navBurger.classList.remove('is-active');
+    navTarget.classList.remove('is-active');
+  }
+
+  navBurger.addEventListener('click', toggleNav);
 
   function changeStyleSheet()
   {
