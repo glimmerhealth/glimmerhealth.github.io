@@ -1,7 +1,6 @@
 // This file should only contain worker thread specific code.
 //sayWorkerReady() ;
 let workerFirstRoute=null;
-importScripts('zlUtils.js');
 importScripts('workerLogic.js');
 
 onmessage = function (msg) 
@@ -39,5 +38,10 @@ onmessage = function (msg)
 function sayWorkerReady() 
 {
     self.postMessage({aTopic:'workerIsReady', aBuf:""});
+}
+
+function ab2str(buf) 
+{
+    return String.fromCharCode.apply(null, new Uint8Array(buf));
 }
 
