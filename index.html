@@ -29,7 +29,8 @@
         }
 
     </style>
-    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/fastdom/1.0.8/fastdom.min.js"></script>    
+    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/fastdom/1.0.8/fastdom.min.js"></script>     
+    <script defer="" src="js/zlUtils.js"></script>
     <script defer="" src="js/mainThread.js"></script>
    
     <link rel="preload" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" as="style">
@@ -38,45 +39,48 @@
     <link rel="preload" href="https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ.woff2" as="font">
     
 
-    <link rel="stylesheet" id="selStyleSheet" href="https://unpkg.com/bulmaswatch/litera/bulmaswatch.min.css" media="all" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" id="selStyleSheet" href="https://unpkg.com/bulmaswatch/cyborg/bulmaswatch.min.css" media="all" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" media="all" onload="if(media!='all')media='all'">
 
 </head>
-<body>
+<body class="container">
 
-<nav class="navbar is-dark is-fixed-top">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="#">
-        <i class="fas fa-heart" style="color:red"></i>
-         Glimmer Health
-      </a>
-     
-      <div class="navbar-burger burger" data-target="navMenuExample2">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-    <div id="navMenuExample2" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item " href="#">
-          Home
+  <div class="block">
+    <nav class="navbar is-dark is-fixed-top">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="javascript:zlRouter('/')">
+          <i class="fas fa-heart" style="color:red"></i>
+           Glimmer Health
         </a>
-        <a class="navbar-item" href="#blog">
-          Blog
-        </a>
-        
+       
+        <div class="navbar-burger burger" data-target="navMenuExample2">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-    </div>
-
-     
+      <div id="navMenuExample2" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item " href="javascript:zlRouter('/')">
+            Home
+          </a>
+          <a class="navbar-item" href="javascript:zlRouter('/blog')">
+            Blog
+          </a>
+          
+        </div>
+      </div>
+  
+       
+      </nav></div>
     
-  </nav>
+  
+  <!--End Of Nav-->
 
-<!--End Of Nav-->
-
+  <div class="block">
     <section class="content">
-        <div id="content"><h1>Glimmer Health</h1>
+      <div class="block">
+          <div id="content"><h1>Glimmer Health</h1>
 <p>Glimmer Health is a pediatric clinic <a href="#loc">located</a> in the heart of Fremont, California. You should choose Glimmer for:</p>
 <h4>1. Quality</h4>
 <p>Our <a href="#peds">pediatricians</a>  are highly rated, board certified, with a proven <a href="https://scholar.google.com/scholar?hl=en&amp;as_sdt=0%2C5&amp;q=sheshashree+seshadri">record of excellence</a>.</p>
@@ -178,7 +182,11 @@
 </table>
 </div>
 </div>
+      </div>
+      
     </section>
+  </div> <!--END of Content Section-->
+  
   
 
 
