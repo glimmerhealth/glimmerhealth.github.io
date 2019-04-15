@@ -1,6 +1,7 @@
 // This file should only contain worker thread specific code.
-//sayWorkerReady() ;
+sayWorkerReady() ;
 let workerFirstRoute=null;
+importScripts('zlUtils.js');
 importScripts('workerLogic.js');
 
 onmessage = function (msg) 
@@ -9,7 +10,7 @@ onmessage = function (msg)
     {
         case 'do_sendWorkerArrBuff':
         {
-            var u8buf = new Uint8Array(msg.data.aBuf);
+            var u8buf = new Uint16Array(msg.data.aBuf);
             const len = u8buf.byteLength;
             var cnt = 0;
             for(cnt=0; cnt<len; cnt++)
@@ -27,6 +28,14 @@ onmessage = function (msg)
             handleRenderRoute(inRouteStr, msg.data.loggedIn);
         }
         break;
+
+        case "renderBlogPost":
+        {
+            //this.console.log("renderRoute Req received!");
+            let inRouteStr = ab2str(msg.data.aBuf)
+            renderPostPage(inRouteStr, msg.data.loggedIn);
+        }
+        break;
         case 'firstRoute':
             workerFirstRoute = ab2str(msg.data.aBuf);  
         break;
@@ -38,10 +47,5 @@ onmessage = function (msg)
 function sayWorkerReady() 
 {
     self.postMessage({aTopic:'workerIsReady', aBuf:""});
-}
-
-function ab2str(buf) 
-{
-    return String.fromCharCode.apply(null, new Uint8Array(buf));
 }
 

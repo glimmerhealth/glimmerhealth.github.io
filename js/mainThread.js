@@ -64,6 +64,20 @@ function reqWorkerRenderRoute(inRouteString)
     ]);
 }
 
+function reqWorkerRenderPost(inPostLink)
+{
+    let arrayBuffInStr = str2ab(inPostLink);
+    myWorker.postMessage(
+    {
+        aTopic: 'renderBlogPost',
+        aBuf: arrayBuffInStr,
+        loggedIn: false
+    },
+    [
+        arrayBuffInStr
+    ]);
+}
+
 function reqFirstRoute2Render(inRouteString)
 {
     let arrayBuffInStr = str2ab(inRouteString);
@@ -80,12 +94,23 @@ function reqFirstRoute2Render(inRouteString)
 
 
 // Router
-function zlRouter() 
+function zlRouter(inRoute) 
 { 
     const newRoute = window.location.hash;
+    //window.history.replaceState({}, "", inRoute);
     closeNav();
     reqWorkerRenderRoute(newRoute);
 }
+
+function zlBlogRender(inPostLink) 
+{ 
+    //const newRoute = window.location.hash;
+    window.history.replaceState({}, "", inPostLink);
+    closeNav();
+    reqWorkerRenderPost(inPostLink);
+}
+
+
 window.onhashchange = zlRouter;
 
 myWorker.onmessage = function handleMessageFromWorker(msg) 
@@ -95,22 +120,31 @@ myWorker.onmessage = function handleMessageFromWorker(msg)
         case 'workerIsReady':
         {
             const routeOnFirstLoad = window.location.hash;
-            const contentEle=document.getElementById("content");
-            if(contentEle.outerHTML==='<div id="content"></div>')
+            const postUrl = getUrlVars(routeOnFirstLoad)["post"];
+            if(typeof postUrl!= 'undefined')
             {
-                //console.log("\nRequesting first load on: " + routeOnFirstLoad + "\n\n\n\n");
-                reqWorkerRenderRoute(routeOnFirstLoad);
+                zlBlogRender(routeOnFirstLoad);
             }
             else
             {
-                //console.log("\nAlready statically rendered. Skipping rendering.\n\n\n\n");
+                const contentEle=document.getElementById("content");
+                if(contentEle.outerHTML==='<div id="content"></div>')
+                {
+                    //console.log("\nRequesting first load on: " + routeOnFirstLoad + "\n\n\n\n");
+                    reqWorkerRenderRoute(routeOnFirstLoad);
+                }
+                else
+                {
+                    //console.log("\nAlready statically rendered. Skipping rendering.\n\n\n\n");
+                }
             }
+            
         }    
         break;
 
         case 'paintHome':
         {
-            const u8buf = new Uint8Array(msg.data.aBuf);
+            const u8buf = new Uint16Array(msg.data.aBuf);
             const mainHtml=ab2str(u8buf)
             paintHome(mainHtml);
         }
@@ -151,19 +185,4 @@ function mutateHome(inContentElement, inHtml)
         console.log("no element");
     }
 
-}
-
-
-function ab2str(buf) 
-{
-    return String.fromCharCode.apply(null, new Uint8Array(buf));
-}
-function str2ab(str) 
-{
-    var buf = new ArrayBuffer(str.length*1); // 2 bytes for each char
-    var bufView = new Uint8Array(buf);
-    for (var i=0, strLen=str.length; i < strLen; i++) {
-        bufView[i] = str.charCodeAt(i);
-    }
-    return buf;
 }
