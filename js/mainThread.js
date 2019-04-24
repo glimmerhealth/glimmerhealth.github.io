@@ -1,4 +1,4 @@
-var myWorker = new Worker('js/webLibWorker.js');
+const myWorker = new Worker(codePrefix+'webLibWorker.js');
 var isUserLoggedIn = false;
 
 function paintHome(inHtml)
@@ -11,41 +11,6 @@ function paintHome(inHtml)
     fastdom.mutate(() => 
     {
         mutateHome(contentElement, inHtml)
-    });
-
-}
-
-function paintLogin(inStr)
-{
-    console.log(`MT: PaintLogin invoked with isUserLoggedIn: ${isUserLoggedIn}`);
-    window.location.href = 'login.html';
-}
-
-function paintLogout(inStr)
-{
-    firebase.auth().signOut();
-    console.log(`MT: PaintLogout invoked with isUserLoggedIn: ${isUserLoggedIn}`);
-    if(inStr)
-    {
-        window.location.href = inStr;
-    }
-    else
-    {
-        window.location.href = '#';
-    }
-    
-}
-
-function paintString(inStr)
-{
-    var contentElement = null;
-    fastdom.measure(() => 
-    {
-        contentElement = measureHome();
-    });
-    fastdom.mutate(() => 
-    {
-        contentElement.innerHTML = inStr;
     });
 
 }
@@ -96,22 +61,23 @@ function reqFirstRoute2Render(inRouteString)
 // Router
 function zlRouter(inRoute) 
 { 
-    const newRoute = window.location.hash;
-    //window.history.replaceState({}, "", inRoute);
+    //const newRoute = window.location.hash;
+    window.history.pushState({}, "", inRoute);
     closeNav();
-    reqWorkerRenderRoute(newRoute);
+    reqWorkerRenderRoute(inRoute);
 }
 
 function zlBlogRender(inPostLink) 
 { 
     //const newRoute = window.location.hash;
-    window.history.replaceState({}, "", inPostLink);
+    const dispLink = location.origin + "/blog/" + inPostLink;
+    window.history.pushState({}, "", dispLink);
     closeNav();
     reqWorkerRenderPost(inPostLink);
 }
 
 
-window.onhashchange = zlRouter;
+//window.onhashchange = zlRouter;
 
 myWorker.onmessage = function handleMessageFromWorker(msg) 
 {
@@ -148,16 +114,6 @@ myWorker.onmessage = function handleMessageFromWorker(msg)
             const mainHtml=ab2str(u8buf)
             paintHome(mainHtml);
         }
-        break;
-
-        case 'paintString':
-			paintString(msg.data.aBuf);
-        break;
-        case 'paintLogin':
-            paintLogin(msg.data.aBuf);
-        break;
-        case 'paintLogout':
-            paintLogout(msg.data.aBuf);
         break;
 
         default:

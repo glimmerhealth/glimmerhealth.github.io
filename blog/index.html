@@ -1,0 +1,246 @@
+<!DOCTYPE html><html style="overflow:auto" class="has-navbar-fixed-top"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GlimmerHealth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        p
+        {
+            word-wrap: break-word;
+        }
+
+        .navbar
+        {
+          margin: 0.5%
+        }
+        .content
+        {
+          margin: 1%;
+        }
+        
+        h2, h1
+        {
+          text-align: center;
+          text-decoration-line: underline;
+        }
+        h3
+        {
+          text-decoration-line: underline;
+        }
+
+    </style>
+    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/fastdom/1.0.8/fastdom.min.js"></script>
+    <script>
+      const codePrefix=location.origin + "/js/";
+      const utilsScript = codePrefix + "zlUtils.js";
+      const mainScript = codePrefix + "mainThread.js";
+      [utilsScript, mainScript].forEach(function(src)
+      {
+        const script = document.createElement('script');
+        script.src = src;
+        script.defer = true;
+        document.head.appendChild(script);
+      });
+    </script>
+    <script defer="" src="javascript: \" utilsscript\""=""></script>     
+    <script defer="" src="javascript:\" mainscript\""=""></script>
+   
+    <link rel="preload" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" as="style">
+
+    <link rel="stylesheet" id="selStyleSheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" media="none" onload="if(media!='all')media='all'">
+
+</head>
+<body class="container">
+
+  <div class="block">
+    <nav class="navbar is-primary is-fixed-top">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="javascript:zlRouter('/')">
+          <i class="fas fa-heart" style="color:red"></i>
+           Glimmer Health
+        </a>
+
+        <a class="navbar-item" href="javascript:zlRouter('/')">
+          <i class="fas fa-home"></i>
+        </a>
+
+        <a class="navbar-item" href="javascript:zlRouter('/blog')">
+          <i class="fas fa-blog"></i>
+        </a>
+
+        <!--
+<a class="navbar-item" href="javascript:zlRouter('/about')">
+          <i class="far fa-address-card"></i>
+        </a>
+  
+        -->
+        
+       
+      </div>
+    </nav>
+  
+  </div><!--End Of Nav-->
+
+  <div class="block">
+    <section class="content">
+      <div class="block">
+          <div id="content">
+    <div class="block">
+    <!--Testing Cards-->
+      <div class="card">
+        <!--
+        <div class="card-image">
+          <figure class="image " style="height: 50%; width: 50%;"> <img src="https://source.unsplash.com/random/800x600" alt="Image"> </figure>
+        </div>
+        -->
+        <div class="card-content">
+              <p class="title is-1">When the Pen is mightier than the Mouse.</p>
+          <div class="media">
+            <div class="media-left">
+              <figure class="image" style="height: 40px; width: 40px;"> <img src="../content/assets/shesh.jpg" alt="Image"> </figure>
+            </div>
+            <div class="media-content">
+              <p class="subtitle is-5">by Dr. Sheshashree Seshadri <br>
+                <small>Published On: 2017-04-10</small>  
+              </p>
+              
+              <!--
+                <p class="subtitle is-6">@johnsmith</p>
+              -->
+            </div>
+          </div>
+          <div class="content">
+             
+            </div>
+            <div class="block">
+            <a href="javascript:zlBlogRender('./3')" style="margin: 0.5%;" class="button is-primary is-outlined is-rounded"> Read More </a>
+            </div>
+        </div>
+      </div>
+    </div><!--END OF Testing Cards-->
+    
+    <div class="block">
+    <!--Testing Cards-->
+      <div class="card">
+        <!--
+        <div class="card-image">
+          <figure class="image " style="height: 50%; width: 50%;"> <img src="https://source.unsplash.com/random/800x600" alt="Image"> </figure>
+        </div>
+        -->
+        <div class="card-content">
+              <p class="title is-1">I am not a mystery. I ... </p>
+          <div class="media">
+            <div class="media-left">
+              <figure class="image" style="height: 40px; width: 40px;"> <img src="../content/assets/shesh.jpg" alt="Image"> </figure>
+            </div>
+            <div class="media-content">
+              <p class="subtitle is-5">by Dr. Sheshashree Seshadri <br>
+                <small>Published On: 2016-08-06</small>  
+              </p>
+              
+              <!--
+                <p class="subtitle is-6">@johnsmith</p>
+              -->
+            </div>
+          </div>
+          <div class="content">
+             
+            </div>
+            <div class="block">
+            <a href="javascript:zlBlogRender('./2')" style="margin: 0.5%;" class="button is-primary is-outlined is-rounded"> Read More </a>
+            </div>
+        </div>
+      </div>
+    </div><!--END OF Testing Cards-->
+    
+    <div class="block">
+    <!--Testing Cards-->
+      <div class="card">
+        <!--
+        <div class="card-image">
+          <figure class="image " style="height: 50%; width: 50%;"> <img src="https://source.unsplash.com/random/800x600" alt="Image"> </figure>
+        </div>
+        -->
+        <div class="card-content">
+              <p class="title is-1">I have always been a mother, but you made me a mommy</p>
+          <div class="media">
+            <div class="media-left">
+              <figure class="image" style="height: 40px; width: 40px;"> <img src="../content/assets/shesh.jpg" alt="Image"> </figure>
+            </div>
+            <div class="media-content">
+              <p class="subtitle is-5">by Dr. Sheshashree Seshadri <br>
+                <small>Published On: 2016-10-05</small>  
+              </p>
+              
+              <!--
+                <p class="subtitle is-6">@johnsmith</p>
+              -->
+            </div>
+          </div>
+          <div class="content">
+             
+            </div>
+            <div class="block">
+            <a href="javascript:zlBlogRender('./1')" style="margin: 0.5%;" class="button is-primary is-outlined is-rounded"> Read More </a>
+            </div>
+        </div>
+      </div>
+    </div><!--END OF Testing Cards-->
+    </div>
+      </div>
+      
+    </section>
+  </div> <!--END of Content Section-->
+  
+  
+
+
+<script async="">
+
+  fetch(codePrefix+'webLibWorker.js');
+  fetch(codePrefix+'workerLogic.js');
+  fetch(location.origin+'/content/index.md');
+  
+  const navBurger = document.querySelector('.navbar-burger');
+  let darkMode = true;
+
+  function toggleNav() 
+  {
+    return;
+    const navEle = navBurger.dataset.target;
+    navTarget = document.getElementById(navEle);
+    navBurger.classList.toggle('is-active');
+    navTarget.classList.toggle('is-active');
+  }
+
+  function closeNav()
+  {
+    return;
+    const navEle = navBurger.dataset.target;
+    navTarget = document.getElementById(navEle);
+    navBurger.classList.remove('is-active');
+    navTarget.classList.remove('is-active');
+  }
+
+  //navBurger.addEventListener('click', toggleNav);
+
+  function changeStyleSheet()
+  {
+    const currStyle = document.getElementById("selStyleSheet");
+    const hRefPrefix = "https://unpkg.com/bulmaswatch/";
+    const hRefSuffix="/bulmaswatch.min.css";
+    const darkModeHref = "cyborg";
+    const lightModeHref="lumen";
+
+    darkMode = !darkMode;
+
+    const finalHref = hRefPrefix + (darkMode===true? darkModeHref :  lightModeHref) + hRefSuffix;
+
+    currStyle.href=finalHref;
+
+  }
+
+</script>
+
+</body></html>

@@ -1,31 +1,11 @@
-# Glimmer Health
-
-Glimmer Health is a pediatric clinic [located](#loc) in the heart of Fremont, California. You should choose Glimmer for: 
-
-#### 1. Quality
-
-Our [pediatricians](#peds)  are highly rated, board certified, with a proven [record of excellence](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=sheshashree+seshadri). 
-
-#### 2. [Hours](#hours)
-
-We are open nights and weekends!
-
-#### 3. [Location](#loc)
-
-Walking distance from Fremont BART, leading pharmacies, labs & specialty clinics. Convenient for prescription pick-ups, blood work, X-Ray or Ultrasound, or follow-up with a leading sub-specialist.
-
-#### 4. Multiligual
-
-Our doctors are fluent in English, Spanish, Hindi and Kannada!  
-
 <div id="peds"></div>
 
 ## Our Pediatricians
 ### Dr. Sheshashree Seshadri M.D.
 
-![](./content/shesh.jpg)
+![](./content/assets/shesh.jpg)
 
-Dr. Seshadri is a highly rated,  experienced pediatrician. She also serves as the Pediatric Medical Director of Foothill Community Health Center in San Jose. Besides general pediatrics, Dr. Seshadri has additional expertise in: 
+Dr. Seshadri is a highly rated, experienced pediatrician, board-certified by the American Academy of Pediatrics. She also serves as the Pediatric Medical Director of Foothill Community Health Center in San Jose. In addition to general pediatrics, Dr. Seshadri's expertise includes: 
 
 - Infant/new-born care.
 
