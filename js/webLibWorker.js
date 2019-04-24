@@ -3,7 +3,6 @@ sayWorkerReady() ;
 let workerFirstRoute=null;
 const codePrefix=location.origin + "/js/";
 importScripts(codePrefix+'zlUtils.js');
-//importScripts(codePrefix+'workerLogic.js');
 
 onmessage = function (msg) 
 {
