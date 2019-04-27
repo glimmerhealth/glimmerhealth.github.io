@@ -41,9 +41,8 @@ Dr. Seshadri is a highly rated, experienced pediatrician, board-certified by the
 
 ## Hours Of Operation
 
-Walk-ins welcome during "**Normal Hours**" listed below.  For "**Appointment Only Hours**", please book an appointment by 5 P.M., walk-ins are discouraged during these hours. 
 
-<div class="table is-striped is-bordered">
+<div class="table is-striped is-bordered" style="word-wrap: break-word; max-width:97%; width:97%">
 
 | Day       | Normal Hours              | Appointment Only Hours    |
 | --------- | ------------------------- | ------------------------- |

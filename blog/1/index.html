@@ -3,32 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>GlimmerHealth</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        p
-        {
-            word-wrap: break-word;
-        }
 
-        .navbar
-        {
-          margin: 0.5%
-        }
-        .content
-        {
-          margin: 1%;
-        }
-        
-        h2, h1
-        {
-          text-align: center;
-          text-decoration-line: underline;
-        }
-        h3
-        {
-          text-decoration-line: underline;
-        }
-
-    </style>
     <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/fastdom/1.0.8/fastdom.min.js"></script>
     <!--
 <script>
@@ -45,48 +20,97 @@
     </script>
     <script defer src="javascript: \"utilsScript\""  ></script>     
     <script defer src="javascript:\"mainScript\"" ></script>
-   
+       <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     -->
     
     <link rel="preload" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" as="style">
-
-    <link rel="stylesheet" id="selStyleSheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" id="selStyleSheet" href="https://unpkg.com/bulmaswatch/litera/bulmaswatch.min.css" media="none" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" media="none" onload="if(media!='all')media='all'">
+
+    <style>
+        .content
+        {
+          font-size: 1.2em !important;
+        }
+          p
+          {
+              word-wrap: break-word;
+          }
+  
+          .navbar
+          {
+            margin-top: 0.5%;
+          }
+
+          h2, h1
+          {
+            text-align: center;
+            text-decoration-line: underline;
+          }
+          h3
+          {
+            text-decoration-line: underline;
+          }
+
+          .is-horizontal-center {
+            justify-content: center;
+          }
+
+          .cent
+          {
+            display: block;
+            margin: 10px auto;
+            padding: 5px;
+            border: 1px solid #ccc
+          }
+  
+      </style>
 
 </head>
 <body class="container">
 
   <div class="block">
-    <nav class="navbar is-primary is-fixed-top">
+    <nav class="navbar is-dark is-fixed-top">
       <div class="navbar-brand">
         <a class="navbar-item" href="javascript:zlRouter('/')">
           <i class="fas fa-heart" style="color:red"></i>
            Glimmer Health
         </a>
 
-        <a class="navbar-item" href="javascript:zlRouter('/')">
-          <i class="fas fa-home"></i>
-        </a>
 
-        <a class="navbar-item" href="javascript:zlRouter('/blog')">
-          <i class="fas fa-blog"></i>
+        <a class="navbar-item" href="tel:1-361-371-2853">
+          <i class="fas fa-phone"></i>
         </a>
-
-        <!--
-<a class="navbar-item" href="javascript:zlRouter('/about')">
-          <i class="far fa-address-card"></i>
-        </a>
-  
-        -->
         
-       
+        <a class="navbar-item" href="/#loc">
+            <i class="fas fa-map-marker-alt"></i>
+        </a>
+
+        <a class="navbar-item" href="/#hours">
+          <i class="far fa-clock"></i>
+        </a>
+
+        
+        <a class="navbar-item" href="/#peds">
+            <i class="fas fa-user-md"></i>
+        </a>
+        
+        <a class="navbar-item navbar-end" href="javascript:zlRouter('/blog')">
+          <!--
+<i class="fas fa-blog"></i>
+          -->
+          Blog
+        </a>
+      
       </div>
+      
     </nav>
   
   </div><!--End Of Nav-->
 
+
   <div class="block">
-    <section class="content">
+    <section class="content " style="margin-left:0.25%;margin-right:0.25%;max-width: 99.5%;width: 99.5%">
       <div class="block">
           <div id="content">  <div class="block">
     <nav class="breadcrumb">
@@ -140,7 +164,7 @@
 
   function toggleNav() 
   {
-    return;
+    return; // if you enable navBurger, comment this out
     const navEle = navBurger.dataset.target;
     navTarget = document.getElementById(navEle);
     navBurger.classList.toggle('is-active');
@@ -320,7 +344,6 @@ function mutateHome(inContentElement, inHtml)
     {
         console.log("no element");
     }
-
 }
 
 </script>

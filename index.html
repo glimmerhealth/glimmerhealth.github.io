@@ -3,32 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>GlimmerHealth</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        p
-        {
-            word-wrap: break-word;
-        }
 
-        .navbar
-        {
-          margin: 0.5%
-        }
-        .content
-        {
-          margin: 1%;
-        }
-        
-        h2, h1
-        {
-          text-align: center;
-          text-decoration-line: underline;
-        }
-        h3
-        {
-          text-decoration-line: underline;
-        }
-
-    </style>
     <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/fastdom/1.0.8/fastdom.min.js"></script>
     <!--
 <script>
@@ -45,132 +20,183 @@
     </script>
     <script defer src="javascript: \"utilsScript\""  ></script>     
     <script defer src="javascript:\"mainScript\"" ></script>
-   
+       <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     -->
     
     <link rel="preload" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" as="style">
-
-    <link rel="stylesheet" id="selStyleSheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" id="selStyleSheet" href="https://unpkg.com/bulmaswatch/litera/bulmaswatch.min.css" media="none" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" media="none" onload="if(media!='all')media='all'">
+
+    <style>
+        .content
+        {
+          font-size: 1.2em !important;
+        }
+          p
+          {
+              word-wrap: break-word;
+          }
+  
+          .navbar
+          {
+            margin-top: 0.5%;
+          }
+
+          h2, h1
+          {
+            text-align: center;
+            text-decoration-line: underline;
+          }
+          h3
+          {
+            text-decoration-line: underline;
+          }
+
+          .is-horizontal-center {
+            justify-content: center;
+          }
+
+          .cent
+          {
+            display: block;
+            margin: 10px auto;
+            padding: 5px;
+            border: 1px solid #ccc
+          }
+  
+      </style>
 
 </head>
 <body class="container">
 
   <div class="block">
-    <nav class="navbar is-primary is-fixed-top">
+    <nav class="navbar is-dark is-fixed-top">
       <div class="navbar-brand">
         <a class="navbar-item" href="javascript:zlRouter('/')">
           <i class="fas fa-heart" style="color:red"></i>
            Glimmer Health
         </a>
 
-        <a class="navbar-item" href="javascript:zlRouter('/')">
-          <i class="fas fa-home"></i>
-        </a>
 
-        <a class="navbar-item" href="javascript:zlRouter('/blog')">
-          <i class="fas fa-blog"></i>
+        <a class="navbar-item" href="tel:1-361-371-2853">
+          <i class="fas fa-phone"></i>
         </a>
-
-        <!--
-<a class="navbar-item" href="javascript:zlRouter('/about')">
-          <i class="far fa-address-card"></i>
-        </a>
-  
-        -->
         
-       
+        <a class="navbar-item" href="/#loc">
+            <i class="fas fa-map-marker-alt"></i>
+        </a>
+
+        <a class="navbar-item" href="/#hours">
+          <i class="far fa-clock"></i>
+        </a>
+
+        
+        <a class="navbar-item" href="/#peds">
+            <i class="fas fa-user-md"></i>
+        </a>
+        
+        <a class="navbar-item navbar-end" href="javascript:zlRouter('/blog')">
+          <!--
+<i class="fas fa-blog"></i>
+          -->
+          Blog
+        </a>
+      
       </div>
+      
     </nav>
   
   </div><!--End Of Nav-->
 
+
   <div class="block">
-    <section class="content">
+    <section class="content " style="margin-left:0.25%;margin-right:0.25%;max-width: 99.5%;width: 99.5%">
       <div class="block">
-          <div id="content"><section class=" hero block content">
-    <div class="hero-body ">
-      <div class="container has-text-centered">
-        
-        <h1 class="">
-            <i class="fas fa-heart" style="color:red"></i>Glimmer Health 
-        </h1>
-        <h4 class="">
-          Quality pediatric care on your <a href="#hours">schedule</a>, in the <a href="#loc">heart</a> of Fremont, C.A.
-        </h4>
-      </div>
+          <div id="content"><section class=" hero block">
+  <div class="hero-body ">
+    <div class="container has-text-centered">
+      
+      <h1 class="">
+          <i class="fas fa-heart" style="color:red"></i>Glimmer Health 
+      </h1>
+      <h4 class="">
+        Quality pediatric care on your <a href="#hours">schedule</a>, in the <a href="#loc">heart</a> of Fremont, C.A.
+      </h4>
     </div>
-  </section>
-
-  <div class="block columns is-multiline">
-    <div class="column is-half">
-        <article class="message is-danger">
-          <div class="message-header">
-            <p>
-                Quality
-            </p>
-            
-          </div>
-          <div class="message-body">
-              <p>Our highly rated, board certified <a href="#peds">pediatricians</a> have a proven <a href="https://scholar.google.com/scholar?hl=en&amp;as_sdt=0%2C5&amp;q=sheshashree+seshadri">record of excellence</a>. <a href="#peds"><i class="fas fa-link"></i></a> </p>
-          </div>
-        </article>
-      </div>
-      
-      <div class="column is-half">
-        <article class="message is-primary">
-          <div class="message-header">
-            <p>
-              
-                <a href="#hours">Hours</a>
-              
-            </p>
-            
-          </div>
-          <div class="message-body">
-              <p>We are <a href="#hours">open</a> nights and weekends! <a href="#hours"><i class="fas fa-link"></i></a> </p>
-              
-          </div>
-        </article>
-      </div>
-      
-      <div class="column is-half">
-        <article class="message is-link">
-          <div class="message-header">
-            <p>
-              
-                <a href="#loc">Location</a>
-              
-            </p>
-            
-          </div>
-          <div class="message-body">
-              <p>Walking distance from Fremont BART, leading pharmacies, labs &amp; specialty clinics. Convenient for prescription pick-ups, blood work, X-Ray or Ultrasound, or follow-up with a leading sub-specialist. <a href="#loc"><i class="fas fa-link"></i></a>
-                 </p>
-              
-          </div>
-        </article>
-      </div>
-  
-      <div class="column is-half">
-          <article class="message is-success">
-            <div class="message-header">
-              <p>
-                
-                  Multiligual
-                
-              </p>
-              
-            </div>
-            <div class="message-body">
-                <p>Our doctors are fluent in English, Spanish, Hindi and Kannada! <a href="#peds"><i class="fas fa-link"></i></a> </p>
-              
-            </div>
-          </article>
-        </div>
-    
-
   </div>
+</section>
+
+<div class="columns block" style="max-width: 98%; margin:0.5%">
+    <div class="container ">
+        <div class="columns">
+            <div class="column">
+                <article class="media">
+                    <div class="media-left">
+                        <i class="far fa-clock fa-2x"></i>
+                    </div>
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>Hours</strong>
+                                </p><p>We are <a href="#hours">open</a> nights and weekends! <a href="#hours"><i class="fas fa-link"></i></a> </p>
+                            <p></p>
+                        </div>
+                        <div>
+                            <a href="#hours" class="button is-focused is-primary"> More </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="media">
+                    <div class="media-left">
+                        <i class="fas fa-globe-americas fa-2x"></i>
+                    </div>
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>Multiligual</strong>
+                                </p><p>Our doctors are fluent in English, Spanish, Hindi and Kannada! <a href="#peds"><i class="fas fa-link"></i></a> </p>
+                             <p></p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="column">
+                <article class="media">
+                    <div class="media-left">
+                        <i class="fas fa-map-marker-alt fa-2x"></i>
+                    </div>
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>Location</strong>
+                                </p><p>Conveniently located in central Fremont.
+                                </p>
+                            <p></p>
+                        </div>
+                        <div>
+                            <a href="#loc" class="button is-focused is-primary"> More </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="media">
+                    <div class="media-left">
+                        <i class="fas fa-magic fa-2x "></i>
+                    </div>
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>Quality</strong>
+                                </p><p>Our highly rated, board certified <a href="#peds">pediatricians</a> have a proven <a href="https://scholar.google.com/scholar?hl=en&amp;as_sdt=0%2C5&amp;q=sheshashree+seshadri">record of excellence</a>. <a href="#peds"><i class="fas fa-link"></i></a> </p>
+                        </div>
+                        <div>
+                            <a href="#peds" class="button is-focused is-primary"> More </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="peds"></div>
 <h2>Our Pediatricians</h2>
 <h3>Dr. Sheshashree Seshadri M.D.</h3>
@@ -213,8 +239,7 @@
 <p><strong>Fax</strong>: +1 361 200 5646</p>
 <div id="hours"></div>
 <h2>Hours Of Operation</h2>
-<p>Walk-ins welcome during “<strong>Normal Hours</strong>” listed below.  For “<strong>Appointment Only Hours</strong>”, please book an appointment by 5 P.M., walk-ins are discouraged during these hours.</p>
-<div class="table is-striped is-bordered">
+<div class="table is-striped is-bordered" style="word-wrap: break-word; max-width:97%; width:97%">
 <table>
 <thead>
 <tr>
@@ -285,7 +310,7 @@
 
   function toggleNav() 
   {
-    return;
+    return; // if you enable navBurger, comment this out
     const navEle = navBurger.dataset.target;
     navTarget = document.getElementById(navEle);
     navBurger.classList.toggle('is-active');
@@ -465,7 +490,6 @@ function mutateHome(inContentElement, inHtml)
     {
         console.log("no element");
     }
-
 }
 
 </script>
