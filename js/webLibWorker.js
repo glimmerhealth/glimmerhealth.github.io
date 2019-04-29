@@ -4,6 +4,31 @@ let workerFirstRoute=null;
 const codePrefix=location.origin + "/js/";
 importScripts(codePrefix+'zlUtils.js');
 
+// Moving all worker logic to a second file to switch easily between worker and main thread, if needed.
+const blogDataUrl= location.origin + "/blog/";
+const maxPosts=3;
+const INNER_HTML_NAME="innerHtml.html";
+
+prefetchSiteAssets();
+async function prefetchSiteAssets()
+{
+  const myOrigin = location.origin + "/";
+  const siteAssests=[myOrigin+INNER_HTML_NAME, blogDataUrl+INNER_HTML_NAME ];
+  let assetCnt=0; let blogCnt=0;
+  let maxAssets=siteAssests.length;
+  for(assetCnt=0; assetCnt<maxAssets; assetCnt++)
+  {
+    await fetch(siteAssests[assetCnt]);
+  }
+
+  for(blogCnt=maxPosts; blogCnt>0; blogCnt--)
+  {
+    const blogPostLink=blogDataUrl + blogCnt.toString() + "/" + INNER_HTML_NAME;
+    await fetch(blogPostLink);
+  }
+}
+
+
 onmessage = function (msg) 
 {
     switch (msg.data.aTopic) 
@@ -36,10 +61,6 @@ function sayWorkerReady()
     self.postMessage({aTopic:'workerIsReady', aBuf:""});
 }
 
-// Moving all worker logic to a second file to switch easily between worker and main thread, if needed.
-const blogDataUrl= location.origin + "/blog/";
-const maxPosts=3;
-const INNER_HTML_NAME="innerHtml.html";
 
 async function handleRenderRoute(inRouteStr, isLoggedIn)
 {

@@ -72,31 +72,22 @@
            Glimmer Health
         </a>
 
-
         <a class="navbar-item" href="tel:1-361-371-2853">
           <i class="fas fa-phone"></i>
         </a>
-        
-        <a class="navbar-item" href="/#loc">
-            <i class="fas fa-map-marker-alt"></i>
-        </a>
 
-        <a class="navbar-item" href="/#hours">
-          <i class="far fa-clock"></i>
-        </a>
-
-        
-        <a class="navbar-item" href="/#peds">
-            <i class="fas fa-user-md"></i>
-        </a>
-        
-        <a class="navbar-item navbar-end" href="javascript:zlRouter('/blog')">
-          <!--
-<i class="fas fa-blog"></i>
-          -->
+        <a class="navbar-item" href="javascript:zlRouter('/blog')">
           Blog
-        </a>
-      
+       </a>
+
+        <div class="navbar-start" id="optionalNav" style="visibility: hidden">
+        
+            <a href="#hours" class="navbar-item is-dark"><i class="far fa-clock"></i>  </a>
+            <a href="#loc" class="navbar-item  is-dark"><i class="fas fa-map-marker-alt"></i> </a>
+            <a href="#peds" class="navbar-item is-dark"> <i class="fas fa-user-md "></i> </a>
+    
+        </div>
+          
       </div>
       
     </nav>
@@ -169,7 +160,6 @@ The most dreaded question – “Have you divulged this to your ‘veteran’ da
   const codePrefix=location.origin + "/js/";
 
   fetch(codePrefix+'webLibWorker.js');
-  fetch(location.origin+'/content/index.md');
   
   const navBurger = document.querySelector('.navbar-burger');
   let darkMode = true;
@@ -281,6 +271,20 @@ function zlRouter(inRoute)
     window.history.pushState({}, "", inRoute);
     closeNav();
     reqWorkerRenderRoute(inRoute);
+    makeXtraNavVisible();
+}
+
+function makeXtraNavVisible()
+{
+  const optionalNav = document.getElementById("optionalNav");
+  if(location.pathname==="/" || typeof(location.pathname)=="undefined")
+  {
+    optionalNav.style.visibility="visible";
+  }
+  else
+  {
+    optionalNav.style.visibility="hidden";
+  }
 }
 
 function zlBlogRender(inPostLink) 
@@ -290,6 +294,7 @@ function zlBlogRender(inPostLink)
     window.history.pushState({}, "", dispLink);
     closeNav();
     reqWorkerRenderPost(inPostLink);
+    makeXtraNavVisible();
 }
 
 
@@ -301,6 +306,7 @@ myWorker.onmessage = function handleMessageFromWorker(msg)
     {
         case 'workerIsReady':
         {
+            makeXtraNavVisible();
             const routeOnFirstLoad = window.location.hash;
             const postUrl = getUrlVars(routeOnFirstLoad)["post"];
             if(typeof postUrl!= 'undefined')
